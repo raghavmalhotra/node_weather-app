@@ -11,6 +11,7 @@ const forecast = require("./utils/forecast")
 
 
 const app = express()
+const port = process.env.PORT || 3000
 
 // define path for express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -107,6 +108,6 @@ res.render("404")
     
 })
 
-app.listen(3000, () => {
-    console.log("started")
+app.listen(port, () => {
+    console.log("server is up on port:" + port)
 })
