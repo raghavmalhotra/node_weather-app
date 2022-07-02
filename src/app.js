@@ -1,10 +1,13 @@
+// core node modules
 const path = require("path")
 
 
+// third party modules
 const express = require("express")
 const hbs = require("hbs")
 const { response } = require("express")
 
+// local modules
 const geocode = require("./utils/geocode")
 const forecast = require("./utils/forecast")
 
@@ -103,11 +106,13 @@ app.get("help/*", (req,res)=>{
         
     })
 
+    // 404 page
 app.get("*", (req,res)=>{
 res.render("404")
     
 })
 
 app.listen(port, () => {
-    console.log("server is up on port:" + port)
+    console.log("server is up on port:" + port)  
+
 })
